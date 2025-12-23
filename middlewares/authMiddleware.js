@@ -35,7 +35,9 @@ import jwt from "jsonwebtoken";
 
 const verifyToken = (req, res, next) => {
   const token = req.cookies.token;
-  // res.send(token)
+  // res.send('h',token)
+ 
+  
   if (!token) {
     return res.status(401).json({ message: "No token provided, access denied" });
   }
@@ -43,7 +45,7 @@ const verifyToken = (req, res, next) => {
   try {
     const verified = jwt.verify(token, process.env.JWT_SECRET);
     req.user = verified; 
-    console.log("Verified user:", req.user);
+    // console.log("Verified user:", req.user);
     next();
   } catch (error) {
     return res.status(401).json({
