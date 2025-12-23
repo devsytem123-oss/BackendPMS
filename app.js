@@ -17,7 +17,10 @@ const app = express();
 
 //middleware
 app.use(cors({
-  origin: "http://localhost:4200",
+  origin: ["http://localhost:4200",
+    "https://pms-backend-sand.vercel.app"
+
+  ],
   credentials: true
 }));
 
