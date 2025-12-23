@@ -17,15 +17,12 @@ const app = express();
 
 //middleware
 app.use(cors({
-  origin: [
-    "http://localhost:4200",
+  origin: ["http://localhost:4200",
     "https://pms-frontend-yi8d.vercel.app"
+
   ],
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true
 }));
-
-app.options("*", cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
