@@ -26,12 +26,12 @@
 import { Resend } from 'resend';
 
 
-const resend = new Resend("re_SUSj39pZ_DpVv11pQvh5fUaYVHyyP2Q9u");
+const resend = new Resend(process.env.RESEND_KEY);
 
 const sendEmail = async (email, subject, message) => {
   try {
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'devsytem123@gmail.com',
       to: email,
       subject,
       text: message,
